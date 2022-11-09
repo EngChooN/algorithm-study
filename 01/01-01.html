@@ -1,4 +1,4 @@
-<!-- 세 수 중 최솟값 -->
+<!-- 01-01 세 수 중 최솟값 -->
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -9,10 +9,28 @@
       function solution(a, b, c) {
         let answer;
 
+        // 배열에 인자 값을 담는다.
+        const arr = [a, b, c];
+        // 임의로 a의 값을 갖는, 가장 작은 수인 min을 선언한다.
+        let min = a;
+
+        // 만든 배열의 index를 전부 비교 할 수 있게 for문을 사용한다.
+        for (let i = 0; i < arr.length; i++) {
+          // min값과 arr[i]를 비교하여, min이 비교 대상과 작거나 같으면 min의 값을 유지한다.
+          if (min <= arr[i]) {
+            min = min;
+          }
+          // 그렇지 않다면, min의 값을 arr[i]의 값으로 바꿔준다.
+          else {
+            min = arr[i];
+          }
+        }
+
+        answer = min;
         return answer;
       }
 
-      console.log(solution(2, 5, 1));
+      console.log(solution(16, 15, 17));
     </script>
   </body>
 </html>
