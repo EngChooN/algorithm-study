@@ -1,0 +1,44 @@
+<!-- 01-06 홀수 -->
+<!-- 7개의 자연수가 주어질 때, 이들 중 홀수인 자연수들을 모두 골라 그 합을 구하고, 고른 홀수들 중 최소값을 찾는 프로그램을 작성하세요. -->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = [];
+        // 합
+        let result = 0;
+
+        // 합구하기
+        const func = arr.map((el) => {
+          if (el % 2 == 1) {
+            answer.push(el);
+            result = result + el;
+          }
+        });
+        console.log("홀수의 합", result);
+
+        // 최솟값구하기
+        // 최솟값
+        let min = answer[1];
+        for (let i = 0; i < answer.length; i++) {
+          if (min <= answer[i]) {
+            min = min;
+          } else {
+            min = answer;
+          }
+        }
+        console.log("최솟값", min);
+
+        return result;
+      }
+
+      arr = [12, 77, 38, 41, 53, 92, 85];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
