@@ -1,0 +1,49 @@
+<!-- 01-08 일곱난쟁이 -->
+<!-- 
+왕비를 피해 일곱 난쟁이들과 함께 평화롭게 생활하고 있던 백설공주에게 위기가 찾아왔다.
+일과를 마치고 돌아온 난쟁이가 일곱 명이 아닌 아홉 명이었던 것이다.
+아홉명의 난쟁이는 모두 자신이 "백설 공주와 일곱 난쟁이"의 주인공이라고 주장했다.
+뛰어난 수학적 직관력을 가지고 있던 백설공주는, 다행스럽게도 일곱 난쟁이의 키의 합이 100이 됨을 기억해냈다.
+아홉난쟁이의 키가 주어졌을 때, 백설공주를 도와 일곱 난쟁이를 찾는 프로그램을 작성하시오. 
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        // 우선 9개의 배열 중에 인덱스 값으로 랜덤하게 7개를 뽑아보자
+        let randomIndexValue = arr[Math.floor(Math.random() * 9)]; // 총 배열의 인덱스가 8이므로 0 ~ 8 사이를 랜덤으로 뽑는다.
+        console.log(randomIndexValue);
+
+        // 7명을 뽑은 배열
+        let newArr = [];
+
+        // 7번만 반복해서 push 할 수는 없는걸까..? 근데 생각해보니까 문제는 같은 인덱스가 나올 수도 있네...
+        const searchThere = function () {
+          for (let i = 0; i < 8; i++) {
+            newArr.push(arr[Math.floor(Math.random() * 9)]);
+            console.log("newArr", newArr);
+            // find()로 겹치는 숫자를 찾아서 없애야하나...?
+            for (let j = 0; j < newArr.length; j++) {
+              if (newArr[i] == newArr[j]) {
+                newArr.splice(i, 1);
+                newArr.push(arr[Math.floor(Math.random() * 9)]);
+              }
+            }
+          }
+        };
+
+        searchThere();
+        console.log(newArr);
+        // console.log(newArr);
+      }
+
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
