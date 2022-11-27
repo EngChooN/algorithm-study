@@ -1,0 +1,36 @@
+<!-- 01-11 대문자 찾기 -->
+<!-- 
+한 개의 문자열을 입력받아 해당 문자열에 알파벳 대문자가 몇 개 있는지 알아내는 프로그램을 작성하세요.
+-->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = 0;
+
+        // 문자 하나하나를 대문자에 포함된 아스키코드인지 확인하여, 맞다면 answer 값에 1을 더하는 for문
+        for (let i = 0; i < s.length; i++) {
+          // 문자 하나하나의 아스키 코드
+          // console.log(s[i].codePointAt());
+
+          // 대문자에 속한 아스키 코드의 범위
+          if (s[i].codePointAt() >= 65 && s[i].codePointAt() <= 90) {
+            answer += 1;
+          }
+        }
+        return answer;
+      }
+
+      // 입력예제
+      let str = "KoreaTimeGood";
+      console.log(solution(str));
+
+      // 출력예제: KoreaTimeGood
+    </script>
+  </body>
+</html>
