@@ -12,6 +12,7 @@
     <script>
       function solution(s) {
         let answer = 0;
+        let answer2 = 0;
 
         // 문자 하나하나를 대문자에 포함된 아스키코드인지 확인하여, 맞다면 answer 값에 1을 더하는 for문
         for (let i = 0; i < s.length; i++) {
@@ -23,6 +24,15 @@
             answer += 1;
           }
         }
+
+        // 또다른 방법 (from. 강사)
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === s[i].toUpperCase()) {
+            answer2++;
+          }
+        }
+        console.log("testCase2: ", answer2);
+
         return answer;
       }
 
