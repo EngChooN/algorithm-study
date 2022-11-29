@@ -72,8 +72,18 @@
         return answer;
       }
 
+      // 별개의 새로운 방법 start (from 강사)
+      function newSolution(s) {
+        answer2 = s;
+        s = s.replace(/A/g, "#");
+        console.log("newSolution: ", s);
+        return s;
+      }
+      // end
+
       let str = "BANANA";
       console.log(solution(str));
+      console.log(newSolution(str));
     </script>
   </body>
 </html>
